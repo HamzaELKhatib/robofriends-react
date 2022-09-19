@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import Hello from './Hello';
 import reportWebVitals from './reportWebVitals';
-import Greeting from "./Greeting";
+import 'tachyons';
+import CardList from './CardList';
+import { robots } from './robots';
 
 
 //========================================================================================================
@@ -12,20 +12,11 @@ import Greeting from "./Greeting";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-
     //====================================================================================================
 
-    <React.StrictMode>
 
-        <h1>This is index.js</h1>
+        <CardList robots={robots}/>
 
-        <Hello helloProp={'Hello' + ' user'}/>
-
-        <Greeting greetingProp={'Greetings' + ' user'}/>
-
-        <App/>
-
-    </React.StrictMode>
 
     //====================================================================================================
 );
