@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Hello from './Hello';
 import reportWebVitals from './reportWebVitals';
+import Greeting from "./Greeting";
 
 
 //========================================================================================================
@@ -15,7 +17,11 @@ root.render(
 
     <React.StrictMode>
 
-        <h1>This is inside index.js</h1>
+        <h1>This is index.js</h1>
+
+        <Hello helloProp={'Hello' + ' user'}/>
+
+        <Greeting greetingProp={'Greetings' + ' user'}/>
 
         <App/>
 
