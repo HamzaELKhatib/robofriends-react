@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import CardList from "./CardList";
-import SearchBox from "./SearchBox";
-import Scroll from "./Scroll";
+import CardList from "../components/CardList";
+import SearchBox from "../components/SearchBox";
+import Scroll from "../components/Scroll";
+import ErrorBoundry from "../components/ErrorBoundry";
 import "./App.css";
 
 
@@ -35,7 +36,7 @@ class App extends Component {
 
         })
 
-        if (this.state.robots.length === 0) {
+        if (!this.state.robots.length) {
 
             return <h1>Loading...</h1>
 
@@ -51,7 +52,11 @@ class App extends Component {
 
                     <Scroll>
 
-                        <CardList robots={filteredRobots}/>
+                        <ErrorBoundry>
+
+                            <CardList robots={filteredRobots}/>
+
+                        </ErrorBoundry>
 
                     </Scroll>
 
